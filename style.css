@@ -1,170 +1,315 @@
 /* apply a natural box layout model to all elements, 
    but allowing components to change */
-   html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f2f2f2;
+  margin: 1rem 0;
+  min-width: 300px;
+} 
+
+.blogpost {
+  margin-bottom: 5rem;
+}
+
+header,
+main,
+footer {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.read-more-link {
+  margin: 1rem 0;
+  color: #91796e;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.read-more-link:hover {
+  color: black;
+}
+
+/* Header styles */
+header {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.main-title {
+  font-size: 1.75rem;
+}
+
+.main-tagline {
+  font-size: 0.9rem;
+}
+
+.menu-container {
+  list-style-type: none;
+  display: flex;
+}
+
+.menu-item {
+  margin: 0.5rem 0.8rem 0.5rem 0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.menu-item-text {
+  color: black;
+  text-decoration: none;
+}
+
+/* Main banners */
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 6px;
+  height: 225px;
+  margin: 2rem 0 150px;
+}
+
+.banner.banner-1 {
+  background-image: url(./assets/images/coffee-1.png);
+}
+
+.banner.banner-2 {
+  background-image: url(./assets/images/coffee-2.png);
+}
+
+.banner.banner-3 {
+  background-image: url(./assets/images/coffee-3.png);
+}
+
+.banner-card {
+  width: calc(100% - 90px);
+  margin-left: 45px;
+  background-color: #f2f2f2;
+  height: 200px;
+  border-radius: 6px;
+  position: relative;
+  top: 150px;
+  text-align: center;
+  transition: top 1s ease-out 100ms;
+}
+
+.banner-card:hover {
+  top: 120px;
+}
+
+.banner-card-h2 {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.banner-card-p {
+  margin: 1rem;
+}
+
+/* Content area */
+.blogpost-thumbnail {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 6px;
+  width: 100%;
+  aspect-ratio: 9/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-button {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: calc(5 / 9 * 100%);
+  aspect-ratio: 1;
+  background-color: white;
+  font-size: 48px;
+  color:#91796e;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.2s;
+  transition-property: width,height,opacity;
+}
+
+.blogpost-thumbnail:hover .circle-button {
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+} 
+
+.thumbnail-1 {
+  background-image: url(./assets/images/blogpost-1.png);
+}
+
+.thumbnail-2 {
+  background-image: url(./assets/images/blogpost-2.png);
+}
+
+.thumbnail-3 {
+  background-image: url(./assets/images/blogpost-3.png);
+}
+
+.thumbnail-4 {
+  background-image: url(./assets/images/blogpost-4.png);
+}
+
+.blogpost-title {
+  color:#91796e;
+  margin: 1rem 0 0.5rem;
+}
+
+time {
+  margin-left: 2rem;
+} 
+
+.post-meta {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin: 1rem 0;
+} 
+
+.post-summary {
+  margin: 1rem 0;
+}
+
+/* Footer styles */
+footer {
+  border-top: 1px solid lightgrey;
+}
+
+.footer-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+}
+
+.footer-section {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.email-input {
+  padding: 0.5rem;
+  width: 80%;
+  border-radius: 30px 0 0 30px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.sign-up-button {
+  border: none;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 0 30px 30px 0;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.sign-up-button:hover {
+  background-color: #eeeeee;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.footer-p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.brands-list {
+  list-style-type: none;
+  display: flex;
+}
+
+.brands-list img {
+  width: 30px;
+  margin-right: 20px;
+}
   
-  /* Page styles */
-  body {
-    font-family: "Roboto", sans-serif;
-    background-color: #f2f2f2;
-    margin: 1rem 0;
-    min-width: 300px;
-  }
-  
-  header,
-  main,
-  footer {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  
-  /* Header styles */
-  header {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-  }
-  
-  .main-title {
-    font-size: 1.75rem;
-  }
-  
-  .main-tagline {
-    font-size: 0.9rem;
-  }
-  
-  .menu-container {
-    list-style-type: none;
+
+/* Media queries */
+@media screen and (min-width: 992px) {
+  .main-banners {
     display: flex;
+    justify-content: space-between;
   }
-  
-  .menu-item {
-    margin: 0.5rem 0.8rem 0.5rem 0;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-  
-  .menu-item-text {
-    color: black;
-    text-decoration: none;
-  }
-  
-  /* Main banners */
+
   .banner {
-    background-image: url(https://via.placeholder.com/350x150);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 6px;
-    height: 225px;
-    margin: 2rem 0 150px;
+    width: 30%;
   }
-  
-  .banner-card {
-    width: calc(100% - 90px);
-    margin-left: 45px;
-    background-color: #f2f2f2;
-    height: 200px;
-    border-radius: 6px;
-    position: relative;
-    top: 150px;
-    text-align: center;
-    transition: top 1s ease-out 100ms;
+
+
+  /* Content area */
+  .content {
+    display: flex;
+    justify-content: space-between;
   }
-  
-  .banner-card:hover {
-    top: 120px;
+
+  .blogposts {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  
-  .banner-card-h2 {
+
+  .sidebar {
+    width: 35%;
+  }
+
+  .sidebar .logo {
+    background-image: url(./assets/images/logo.png);
     display: inline-block;
-    margin-top: 50px;
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: contain;
   }
-  
-  .banner-card-p,
-  .banner-card-a {
-    margin: 1rem;
-  }
-  
-  .banner-card-a {
-    color: #91796e;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-  
-  .banner-card-a:hover {
-    color: black;
-  }
-  
-  /* Footer styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   footer {
-    border-top: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-evenly;
   }
-  
-  .footer-title {
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 1rem 0;
-    font-size: 0.8rem;
-  }
-  
+
   .footer-section {
-    margin-top: 2rem;
-    font-size: 0.8rem;
+    width: 30%;
   }
-  
-  .email-input {
-    padding: 0.5rem;
-    width: 80%;
-    border-radius: 30px 0 0 30px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    border: none;
-  }
-  
-  .sign-up-form {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 1rem;
-  }
-  
-  .sign-up-button {
-    border: none;
-    padding: 0.5rem;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    border-radius: 0 30px 30px 0;
-    background-color: lightgrey;
-    cursor: pointer;
-  }
-  
-  .sign-up-button:hover {
-    background-color: #eeeeee;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .footer-p {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  
-  .brands-list {
-    list-style-type: none;
-    display: flex;
-  }
-  
-  .brands-list img {
-    width: 30px;
-    margin-right: 20px;
-  }
-  
+}
+
